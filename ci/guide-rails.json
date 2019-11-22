@@ -153,16 +153,6 @@
 		},
 		"default_properties": [
 			{
-				"name": "consul.tag",
-				"value": "((application.shortsha))",
-				"type": "string"
-			},
-			{
-				"name": "consul.servicename",
-				"value": "((application.name))",
-				"type": "string"
-			},
-			{
 				"name": "additional_properties_file",
 				"value": "local-sonar-project.properties",
 				"type": "string"
