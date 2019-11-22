@@ -32,47 +32,37 @@
 					{
 						"name": "Restore",
 						"definition": "Restore with nuget",
-						"command": "nuget restore",
+						"command": "#nuget restore",
 						"properties": null
 					},
 					{
 						"name": "Build",
 						"definition": "Build debug files",
-						"command": "msbuild /t:Rebuild /p:Configuration=Debug",
+						"command": "#msbuild /t:Rebuild /p:Configuration=Debug",
 						"properties": null
 					},
 					{
 						"name": "Unit test and Coverage",
 						"definition": "Unit test and coverage",
-						"command": ".\\test.ps1",
+						"command": "#.\\test.ps1",
 						"properties": null
 					},
 					{
 						"name": "Make Cobertura Report",
 						"definition": "convert report to cobertura format",
-						"command": ".\\makereport.ps1",
+						"command": "#.\\makereport.ps1",
 						"properties": null
 					},
 					{
 						"name": "NuGet Publish",
 						"definition": "Publish NuGet Package",
-						"command": "cd SharedLib\n.\\package.ps1",
+						"command": "#cd SharedLib\n.\\package.ps1",
 						"properties": null
 					}
 				],
 				"exit_actions": {
 					"default": {
 						"fetch_logs": true,
-						"notifications": [
-							{
-								"type": "slack",
-								"send_notification": true,
-								"to": [
-									"#gr-pipeline"
-								],
-								"message": "Segment Status"
-							}
-						],
 						"code_analysis": {
 							"publish": true,
 							"properties": null
@@ -80,36 +70,12 @@
 						"delete_instances": true
 					},
 					"on_success": {
-						"notifications": [
-							{
-								"type": "slack",
-								"send_notification": true,
-								"to": null,
-								"message": "Test message"
-							}
-						],
 						"code_analysis": null
 					},
 					"on_failure": {
-						"notifications": [
-							{
-								"type": "slack",
-								"send_notification": true,
-								"to": null,
-								"message": "Segment Failure"
-							}
-						],
 						"code_analysis": null
 					},
 					"on_abort": {
-						"notifications": [
-							{
-								"type": "slack",
-								"send_notification": true,
-								"to": null,
-								"message": "Segment Aborted"
-							}
-						],
 						"code_analysis": null
 					}
 				},
@@ -160,16 +126,6 @@
 		"exit_actions": {
 			"default": {
 				"fetch_logs": true,
-				"notifications": [
-					{
-						"type": "slack",
-						"send_notification": true,
-						"to": [
-							"#gr-pipeline"
-						],
-						"message": "Segment Status"
-					}
-				],
 				"code_analysis": {
 					"publish": true,
 					"properties": null
@@ -177,42 +133,18 @@
 				"delete_instances": true
 			},
 			"on_success": {
-				"notifications": [
-					{
-						"type": "slack",
-						"send_notification": true,
-						"to": null,
-						"message": "Test message"
-					}
-				],
 				"code_analysis": {
 					"publish": false,
 					"properties": null
 				}
 			},
 			"on_failure": {
-				"notifications": [
-					{
-						"type": "slack",
-						"send_notification": true,
-						"to": null,
-						"message": "Segment Failure"
-					}
-				],
 				"code_analysis": {
 					"publish": false,
 					"properties": null
 				}
 			},
 			"on_abort": {
-				"notifications": [
-					{
-						"type": "slack",
-						"send_notification": true,
-						"to": null,
-						"message": "Segment Aborted"
-					}
-				],
 				"code_analysis": {
 					"publish": false,
 					"properties": null
@@ -254,6 +186,6 @@
 		"releases": []
 	},
 	"organization": {
-		"orgname": "Onboarding-Demo"
+		"orgname": "test-organization"
 	}
 }
