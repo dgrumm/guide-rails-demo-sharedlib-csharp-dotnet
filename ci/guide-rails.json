@@ -38,25 +38,25 @@
 					{
 						"name": "Build",
 						"definition": "Build debug files",
-						"command": "msbuild /t:Rebuild /p:Configuration=Debug\n#\u0026 'C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe' /t:Rebuild /p:Configuration=Debug",
+						"command": "#msbuild /t:Rebuild /p:Configuration=Debug",
 						"properties": null
 					},
 					{
 						"name": "Unit test and Coverage",
 						"definition": "Unit test and coverage",
-						"command": ".\\test.ps1",
+						"command": "#.\\test.ps1",
 						"properties": null
 					},
 					{
 						"name": "Make Cobertura Report",
 						"definition": "convert report to cobertura format",
-						"command": ".\\makereport.ps1",
+						"command": "#.\\makereport.ps1",
 						"properties": null
 					},
 					{
 						"name": "NuGet Publish",
 						"definition": "Publish NuGet Package",
-						"command": "cd SharedLib\n.\\package.ps1",
+						"command": "#cd SharedLib\n#.\\package.ps1",
 						"properties": null
 					}
 				],
