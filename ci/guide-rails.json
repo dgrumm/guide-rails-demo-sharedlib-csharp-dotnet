@@ -30,6 +30,12 @@
 				"segment_type": "build",
 				"job_steps": [
 					{
+						"name": "Env Info",
+						"definition": "Env Info",
+						"command": "$env:PATH\n(get-command tar.exe).Path\n(get-command concourse.exe).Path\n(get-command nssm.exe).Path\n(get-command SonarScanner.MSBuild.exe).Path\n(get-command nuget.exe).Path\n(get-command msbuild.exe).Path\nget-command -CommandType Application | format-table",
+						"properties": null
+					},
+					{
 						"name": "Restore",
 						"definition": "Restore with nuget",
 						"command": "nuget restore",
