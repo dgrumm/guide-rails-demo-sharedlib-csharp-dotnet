@@ -44,7 +44,7 @@
 					{
 						"name": "Build",
 						"definition": "Build debug files",
-						"command": "#msbuild /t:Rebuild /p:Configuration=Debug",
+						"command": "#enable build after appropriate VS version installed\n#msbuild /t:Rebuild /p:Configuration=Debug\n",
 						"properties": null
 					},
 					{
